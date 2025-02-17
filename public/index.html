@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" href="./img/logo.png" type="image/x-icon" />
+    <link rel="stylesheet" href="./style/style.css" />
+    <title>Multiplayer Pong Game</title>
+  </head>
+  <body translate="no">
+    <section>
+      <h1>Multiplayer Pong Game</h1>
+      <form id="player-form">
+        <div>
+          <label for="player1">Player Name:</label>
+          <input type="text" id="player1" name="player1" required />
+        </div>
+        <main>
+          <a href="./html/gameSBS.html">
+            <div class="card" style="--active-color: #e0f2fe">
+              <pixel-canvas
+                data-gap="10"
+                data-speed="25"
+                data-colors="#e0f2fe, #7dd3fc, #0ea5e9"
+              ></pixel-canvas>
+              <button type="button">Play Side By Side</button>
+            </div>
+          </a>
+          <a href="./html/gameMulti.html">
+            <div class="card" id="gameMulti" style="--active-color: #fef08a">
+              <pixel-canvas
+                data-gap="3"
+                data-speed="20"
+                data-colors="#fef08a, #fde047, #eab308"
+              ></pixel-canvas>
+              <button type="button">Play with Friend (Working on it)</button>
+            </div>
+          </a>
+          <a href="./html/gameAI.html">
+            <div class="card" id="gameAI" style="--active-color: #fecdd3">
+              <pixel-canvas
+                data-gap="6"
+                data-speed="80"
+                data-colors="#fecdd3, #fda4af, #e11d48"
+                data-no-focus
+              ></pixel-canvas>
+              <button type="button">Play with AI</button>
+            </div>
+          </a>
+        </main>
+      </form>
+    </section>
+    <script src="./public/js/script.js"></script>
+  </body>
+</html>

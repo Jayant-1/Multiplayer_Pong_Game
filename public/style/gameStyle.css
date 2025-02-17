@@ -1,0 +1,46 @@
+@import url("https://fonts.googleapis.com/css2?family=Play:wght@400;700&display=swap");
+* {
+  font-family: "Play", serif;
+}
+body {
+  text-align: center;
+  background-color: ghostwhite;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  flex-direction: column;
+  position: fixed;
+  width: 100%;
+}
+#message {
+  text-align: center;
+  font-size: 24px;
+  margin: 20px;
+  font-family: 'Courier New', Courier, monospace;
+}
+canvas {
+  display: block;
+  margin: 0 auto;
+  /* background: #333; */
+}
+body.dark-mode {
+  background-color: #121212;
+  color: #ffffff;
+}
+.dark-mode {
+  background-color: #121212;
+  color: #ffffff;
+}
+
+button {
+  margin-top: 20px;
+  padding: 10px 20px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+button.dark-mode {
+  background-color: #ffffff;
+  color: #121212;
+}

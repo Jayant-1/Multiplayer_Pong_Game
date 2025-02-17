@@ -1,0 +1,177 @@
+@import url("https://fonts.googleapis.com/css2?family=Acme&family=PT+Sans+Narrow:wght@400;700&display=swap");
+body {
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  font-family: "Acme", serif;
+  font-weight: 500;
+  word-spacing: 5px;
+  font-style: normal;
+  flex-direction: column;
+  position: fixed;
+  width: 100%;
+}
+section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 20px;
+}
+h1 {
+  font-size: 5rem;
+}
+
+form {
+  margin-bottom: 20px;
+}
+
+label {
+  font-size: 40px;
+  text-align: center;
+  display: flex;
+  margin: 0px 0 7px;
+  align-items: center;
+}
+
+input {
+  padding: 10px;
+  font-size: 20px;
+  border: 1px solid #000;
+  border-radius: 5px;
+  width: 300px;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+button {
+  padding: 10px 20px;
+  font-size: 16px;
+  cursor: pointer;
+}
+a {
+  text-decoration: none;
+  color: black;
+}
+div {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+:root {
+  --space: 1rem;
+  --bg: #09090b;
+  --fg: #e3e3e3;
+  --surface-1: #101012;
+  --surface-2: #27272a;
+  --surface-3: #52525b;
+  --ease-out: cubic-bezier(0.5, 1, 0.89, 1);
+  --ease-in-out: cubic-bezier(0.45, 0, 0.55, 1);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+height,
+body {
+  height: 100%;
+}
+
+body {
+  display: grid;
+  color: var(--fg);
+  background: var(--bg);
+  padding: var(--space);
+  min-height: 100vh;
+}
+
+main {
+  display: grid;
+  grid-template-columns: repeat(var(--count, 1), 1fr);
+  gap: var(--space);
+  margin: 100px auto;
+  inline-size: min(var(--max, 15rem), 100%);
+
+  @media (min-width: 45rem) {
+    --count: 3;
+    --max: 60rem;
+  }
+}
+
+.card {
+  position: relative;
+  overflow: hidden;
+  display: grid;
+  grid-template-areas: "card";
+  place-items: center;
+  aspect-ratio: 160/90;
+  border: 1px solid var(--surface-2);
+  isolation: isolate;
+  transition: border-color 200ms var(--ease-out);
+  user-select: none;
+
+  &::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(
+      circle at bottom left,
+      transparent 55%,
+      var(--surface-1)
+    );
+    pointer-events: none;
+    box-shadow: var(--bg) -0.5cqi 0.5cqi 2.5cqi inset;
+    transition: opacity 900ms var(--ease-out);
+  }
+
+  &::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    margin: auto;
+    aspect-ratio: 1;
+    opacity: 0;
+    transition: opacity 800ms var(--ease-out);
+  }
+
+  > * {
+    grid-area: card;
+  }
+
+  button {
+    background: transparent;
+    color: var(--fg);
+    border: none;
+    padding: 0.5rem 1rem;
+    font-size: 1.7rem;
+    cursor: pointer;
+    transition: background 200ms var(--ease-in-out),
+      color 200ms var(--ease-in-out);
+  }
+
+  &:focus-within {
+    outline: 5px auto Highlight;
+    outline: 5px auto -webkit-focus-ring-color;
+  }
+
+  &:where(:hover, :focus-within) {
+    border-color: var(--active-color, var(--fg));
+    transition: border-color 800ms var(--ease-in-out);
+  }
+
+  &:where(:hover, :focus-within) svg {
+    color: var(--active-color, var(--fg));
+    scale: 1.1;
+    transition: 300ms var(--ease-in-out);
+  }
+
+  &:where(:hover, :focus-within)::before {
+    opacity: 0;
+  }
+
+  &:where(:hover, :focus-within)::after {
+    opacity: 1;
+  }
+}
