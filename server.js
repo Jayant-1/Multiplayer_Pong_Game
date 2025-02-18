@@ -98,6 +98,6 @@ const PORT = process.env.PORT || 3000;
 const HOST = "0.0.0.0";  // Listen on all network interfaces
 
 http.listen(PORT, HOST, () => {
-  console.log(`Server running on http://192.168.30.26:${PORT}`);
+  console.log(`Server running on http://192.168.30.192:${PORT}`);
   console.log(`Open http://localhost:${PORT} to play on this PC`);
 });

@@ -52,7 +52,7 @@ const Game = {
     this.canvas.style.height = this.canvas.height / 2 + "px";
 
     // Initialize socket connection
-    this.socket = io("http://192.168.30.26:3000");  // Replace with your server's LAN IP
+    this.socket = io("http://192.168.30.192:3000");  // Replace with your server's LAN IP
     this.setupSocketListeners();
 
     // Initialize game state
